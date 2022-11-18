@@ -17,13 +17,4 @@ export class ConverterHomeComponent implements OnInit {
   ngOnInit(): void {
     
   }
-
-  convert(){
-    debugger
-    this.service.convert(this.amount)
-    .subscribe(res => {
-      console.log(res.result);
-    });
-  }
-
 }

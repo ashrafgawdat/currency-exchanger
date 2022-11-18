@@ -4,6 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiKeyInterceptor } from './interceptors/api-key.interceptor';
 import { ApiService } from './services/api.service';
 import { CurrencyConverterService } from './services/currency-converter.service';
+import { TestCurrencyConverterService } from './services/test-currency-converter.service';
 
 
 
@@ -17,6 +18,7 @@ import { CurrencyConverterService } from './services/currency-converter.service'
     { provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true },
     ApiService,
     CurrencyConverterService,
+    TestCurrencyConverterService,
     HttpClientModule
   ]
 })

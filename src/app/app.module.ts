@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { CurrencyConverterModule } from './currency-converter/currency-converter.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ConverterPanelComponent } from './currency-converter/converter-panel/converter-panel.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConverterPanelComponent
   ],
   imports: [
     BrowserModule,

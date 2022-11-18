@@ -1,0 +1,43 @@
+<div class="form-style">
+
+    <div class="row">
+        
+        <div class="col-3">
+            <input type="number" [(ngModel)]="amount">
+        </div>
+        <div class="col-2">
+            <select id='fromSymbol' name='fromSymbol' [(ngModel)]="fromSymbol" (change)="onChange()">
+                <option *ngFor="let symbol of availableSymbols" [value]="symbol">
+                {{symbol}}
+                </option>    
+            </select>
+        </div>
+        <div class="col-2 swap-arrow">
+            <i class='fas fa-arrows-alt-h' title="Swap" [ngClass]="{'disabled' : busy || !valid}" (click)="swap()"></i>
+        </div>
+        <div class="col-2">
+            <select id='toSymbol' name='toSymbol' [(ngModel)]="toSymbol" (change)="onChange()">
+                <option *ngFor="let symbol of availableSymbols" [value]="symbol">
+                {{symbol}}
+                </option>    
+            </select>
+        </div>
+        <div class="col-3">
+            <input type="button" value="Convert" [disabled]="busy" [ngClass]="{'disabled' : busy || !valid}" (click)="convert()">
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-6 conversion-result">
+            {{ transformCurrency(conversionResult, toSymbol) }}
+        </div>
+        <div class="col-6 conversion-result">
+            {{ transformConversionRate(converterResponse) }}
+        </div>
+
+    </div>
+            
+
+    
+</div>

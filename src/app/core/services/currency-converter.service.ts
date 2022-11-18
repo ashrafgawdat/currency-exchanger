@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { ApiService } from './api.service';
 import { map } from 'rxjs/operators';
-import { ConverterResponse } from '../models/converter-response.model';
+import { ConverterResponse, Symbols } from '../models/converter-response.model';
 
 @Injectable()
 export class CurrencyConverterService {
@@ -13,8 +13,13 @@ export class CurrencyConverterService {
   ) {}
   
 
-  convert(amount: number): Observable<ConverterResponse> {
-    return this.apiService.get('convert?from=GBP&to=JPY&amount=25')
+  convert(amount: number, from: string, to: string): Observable<ConverterResponse> {
+    return this.apiService.get(`convert?from=${from}&to=${to}&amount=${amount}`)
+      .pipe(map(data => data));
+  }
+  
+  symbols(): Observable<Symbols> {
+    return this.apiService.get('symbols')
       .pipe(map(data => data));
   }
 }

@@ -1,16 +1,26 @@
 <body>
 
-  <nav class="ccsticky-nav">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  <section>
+
+
+  <div class="sticky-header">
+    
+    <div class="row nav-menu">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="row fixed-panel">
+      <converter-panel></converter-panel>
+    </div>
+  </div>
+  <div class="spacer">
+    &nbsp;
+  </div>
+  <div class="row main-content">
     <router-outlet></router-outlet>
-  </section>
+  </div>
   <ul></ul>
 
 </body>

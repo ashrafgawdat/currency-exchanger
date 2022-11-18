@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+@use 'layout.scss';
+@use 'forms.scss';
+
+
+
+.sticky-header ul {
+padding: 20px;
+margin: 0 auto;
+list-style: none;
+text-align: center;
+}
+
+.sticky-header ul li {
+display: inline-block;
+margin: 0 10px;
+}
+
+.sticky-header ul li a {
+padding: 10px 0;
+color: #fff;
+font-size: 1rem;
+text-decoration: none;
+font-weight: bold;
+transition: all 0.2s ease;
+}
+
+.sticky-header ul li a:hover {
+color: #34495E;
+}
+
+section {
+padding: 50px;
+background: #fff;
+border-bottom: 1px solid #ccc;
+text-align: center;
+margin-top: 60px;
+}
+    
+  
+  a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+  }
+  
+  html {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  .box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+  }
+  
+.disabled{
+    color: gray !important;
+    pointer-events: none;
+}
+
+  
+.card {
+    background-color: #33b5e5;
+    padding: 15px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
